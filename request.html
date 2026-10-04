@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeDrop | Request Blood</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#e63946,#1d3557);
+padding:20px;
+}
+
+.container{
+width:450px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.3);
+color:white;
+animation:fadeIn 1s ease;
+}
+
+h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-size:14px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+textarea{
+resize:none;
+height:70px;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:white;
+color:#e63946;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ffd166;
+}
+
+.success{
+margin-top:15px;
+text-align:center;
+color:#00ffcc;
+display:none;
+font-weight:600;
+}
+
+.error{
+margin-top:10px;
+text-align:center;
+color:#ffdddd;
+display:none;
+font-size:14px;
+}
+
+a{
+display:block;
+text-align:center;
+margin-top:20px;
+color:white;
+text-decoration:none;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>🩸 Request Blood</h2>
+
+<form id="requestForm">
+
+<div class="input-group">
+<label>Patient Name</label>
+<input type="text" required>
+</div>
+
+<div class="input-group">
+<label>Required Blood Group</label>
+<select required>
+<option value="">Select Blood Group</option>
+<option>A+</option>
+<option>B+</option>
+<option>O+</option>
+<option>AB+</option>
+<option>A-</option>
+<option>B-</option>
+<option>O-</option>
+<option>AB-</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Hospital Name</label>
+<input type="text" required>
+</div>
+
+<div class="input-group">
+<label>City</label>
+<input type="text" required>
+</div>
+
+<div class="input-group">
+<label>Contact Mobile (10 digits)</label>
+<input type="tel" id="mobile" maxlength="10" required>
+</div>
+
+<div class="input-group">
+<label>Required Date</label>
+<input type="date" required>
+</div>
+
+<button type="submit">Submit Request</button>
+
+<div class="error" id="errorMsg">
+❌ Mobile number must be exactly 10 digits!
+</div>
+
+<div class="success" id="successMsg">
+✔ Blood Request Submitted Successfully!
+</div>
+
+</form>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</div>
+
+<script>
+document.getElementById("requestForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let mobile = document.getElementById("mobile").value.trim();
+let pattern = /^[0-9]{10}$/;
+
+if(!pattern.test(mobile)){
+document.getElementById("errorMsg").style.display = "block";
+document.getElementById("successMsg").style.display = "none";
+}
+else{
+document.getElementById("errorMsg").style.display = "none";
+document.getElementById("successMsg").style.display = "block";
+}
+});
+</script>
+
+</body>
+</html>

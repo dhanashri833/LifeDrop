@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camp Registration | LifeDrop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#e63946,#ff6b6b);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    width:100%;
+    max-width:500px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.container h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#e63946;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+input, select{
+    margin-bottom:15px;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+button{
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:#e63946;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#b71c1c;
+}
+
+.back{
+    text-align:center;
+    margin-top:15px;
+}
+
+.back a{
+    text-decoration:none;
+    color:#e63946;
+    font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🩸 Camp Registration Form</h2>
+
+    <form onsubmit="showMessage(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="number" placeholder="Age" required>
+        
+        <select required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+        </select>
+
+        <input type="tel" placeholder="Contact Number" required>
+        <input type="email" placeholder="Email Address" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div class="back">
+        <a href="camp.html">← Back to Home</a>
+    </div>
+</div>
+
+<script>
+function showMessage(event){
+    event.preventDefault();
+    alert("✅ Registration Successful! Thank you for joining the camp.");
+}
+</script>
+
+</body>
+</html>

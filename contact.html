@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeDrop | Contact Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1d3557,#e63946);
+padding:20px;
+overflow:hidden;
+}
+
+/* Animated Background Circles */
+body::before, body::after{
+content:'';
+position:absolute;
+width:350px;
+height:350px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+animation:float 8s infinite alternate;
+}
+
+body::after{
+right:-100px;
+bottom:-100px;
+animation-delay:3s;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(40px);}
+}
+
+.container{
+width:900px;
+display:flex;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+border-radius:20px;
+box-shadow:0 10px 35px rgba(0,0,0,0.3);
+overflow:hidden;
+color:white;
+animation:fadeIn 1s ease;
+}
+
+.left{
+flex:1;
+padding:40px;
+background:rgba(0,0,0,0.2);
+}
+
+.right{
+flex:1;
+padding:40px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:6px;
+font-size:14px;
+}
+
+.input-group input,
+.input-group textarea{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+outline:none;
+}
+
+textarea{
+resize:none;
+height:80px;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:white;
+color:#e63946;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ffd166;
+}
+
+.info{
+margin-top:20px;
+line-height:1.8;
+}
+
+.success{
+margin-top:15px;
+color:#00ffcc;
+display:none;
+font-weight:600;
+}
+
+.error{
+margin-top:10px;
+color:#ffdddd;
+display:none;
+font-size:14px;
+}
+
+a{
+display:block;
+margin-top:20px;
+color:white;
+text-decoration:none;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+.container{
+flex-direction:column;
+width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+<h2>📞 Contact Us</h2>
+
+<form id="contactForm">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" required>
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="input-group">
+<label>Mobile (10 digits)</label>
+<input type="tel" id="mobile" maxlength="10" required>
+</div>
+
+<div class="input-group">
+<label>Your Message</label>
+<textarea required></textarea>
+</div>
+
+<button type="submit">Send Message</button>
+
+<div class="error" id="errorMsg">
+❌ Please enter valid email and 10-digit mobile number!
+</div>
+
+<div class="success" id="successMsg">
+✔ Message Sent Successfully!
+</div>
+
+</form>
+
+<a href="index.html">⬅ Back to Home</a>
+</div>
+
+<div class="right">
+<h2>🩸 LifeDrop Support</h2>
+<div class="info">
+<p><strong>📍 Address:</strong> Mumbai, Maharashtra</p>
+<p><strong>📞 Phone:</strong> +91 9876543210</p>
+<p><strong>📧 Email:</strong> support@lifedrop.com</p>
+<p><strong>⏰ Working Hours:</strong> 24/7 Emergency Support</p>
+</div>
+</div>
+
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+let email = document.getElementById("email").value.trim();
+let mobile = document.getElementById("mobile").value.trim();
+
+let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+let mobilePattern = /^[0-9]{10}$/;
+
+if(!emailPattern.test(email) || !mobilePattern.test(mobile)){
+document.getElementById("errorMsg").style.display = "block";
+document.getElementById("successMsg").style.display = "none";
+}
+else{
+document.getElementById("errorMsg").style.display = "none";
+document.getElementById("successMsg").style.display = "block";
+}
+});
+</script>
+
+</body>
+</html>

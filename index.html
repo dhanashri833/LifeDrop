@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeDrop | Blood Donation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f9fa;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#e63946;
+    color:white;
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+nav h2{
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#ffd166;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:linear-gradient(rgba(230,57,70,0.8),rgba(230,57,70,0.8)),
+    url('https://images.unsplash.com/photo-1584515933487-779824d29309');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:20px;
+    animation:fadeIn 2s ease-in;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+    animation:slideDown 1.5s ease;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    margin:10px;
+    font-size:16px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:white;
+    color:#e63946;
+}
+
+.btn-primary:hover{
+    background:#ffd166;
+}
+
+.btn-secondary{
+    background:#1d3557;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:black;
+}
+
+/* Section */
+.section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:40px;
+    font-size:32px;
+    color:#e63946;
+}
+
+/* Cards */
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    width:250px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#1d3557;
+}
+
+/* Footer */
+footer{
+    background:#e63946;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-50px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>🩸 LifeDrop</h2>
+    <ul>
+        
+        <li><a href="camp.html">Camps</a></li>
+
+        <li><a href="request.html">Donate</a></li>
+        <li><a href="find.html">Find Blood</a></li>
+	 <li><a href="emergency.html">Emergency Blood</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1>Donate Blood, Save Lives</h1>
+    <p>Your one donation can save up to 3 lives.</p>
+    
+</section>
+
+<section class="section">
+    <h2>Why Donate Blood?</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>🩸 Save Lives</h3>
+            <p>Your donation helps patients in emergency situations.</p>
+        </div>
+        <div class="card">
+            <h3>⏱ Quick Process</h3>
+            <p>Donation takes only 15 minutes.</p>
+        </div>
+        <div class="card">
+            <h3>❤️ Safe & Secure</h3>
+            <p>100% safe and medically supervised process.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 LifeDrop | Blood Donation Awareness Website
+</footer>
+
+</body>
+</html>

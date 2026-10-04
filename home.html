@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeDrop | Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+    transition:0.3s;
+}
+
+body{
+    background:#f8f9fa;
+}
+
+/* Dark Mode */
+body.dark{
+    background:#121212;
+    color:white;
+}
+
+body.dark nav{
+    background:#1e1e1e;
+}
+
+body.dark .hero{
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1584515933487-779824d29309');
+    background-size:cover;
+    background-position:center;
+}
+
+/* Loader */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#e63946;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.drop{
+    width:50px;
+    height:70px;
+    background:white;
+    border-radius:50%;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:#e63946;
+    color:white;
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+nav h2{
+    font-weight:700;
+}
+
+.toggle-btn{
+    cursor:pointer;
+    background:white;
+    color:#e63946;
+    border:none;
+    padding:8px 15px;
+    border-radius:20px;
+    font-weight:600;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    background:linear-gradient(rgba(230,57,70,0.85),rgba(230,57,70,0.85)),
+    url('https://images.unsplash.com/photo-1584515933487-779824d29309');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:20px;
+    animation:fadeIn 1.5s ease-in-out;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+    animation:slideDown 1s ease;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:600px;
+    margin-bottom:30px;
+}
+
+/* Buttons */
+.hero button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:white;
+    color:#e63946;
+}
+
+.btn-primary:hover{
+    background:#ffd166;
+}
+
+.btn-secondary{
+    background:#1d3557;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:black;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-50px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .hero h1{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Loader -->
+<div id="loader">
+    <div class="drop"></div>
+</div>
+
+<!-- Navbar -->
+<nav>
+    <h2>🩸 LifeDrop</h2>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Mode</button>
+</nav>
+
+<!-- Home Section -->
+<section class="hero" id="home">
+    <h1>Donate Blood, Save Lives</h1>
+    <p>Your one donation can save up to 3 lives. Join our mission to make blood available for everyone in need.</p>
+    <div>
+        <button class="btn-primary">Become a Donor</button>
+        <button class="btn-secondary">Find Blood</button>
+    </div>
+</section>
+
+<script>
+/* Loader Hide */
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display = "none";
+});
+
+/* Dark Mode Toggle */
+function toggleMode(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
